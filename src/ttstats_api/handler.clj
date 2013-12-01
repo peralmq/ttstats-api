@@ -35,7 +35,13 @@
 (sql/with-connection (db-connection)
 ;  (sql/drop-table :songs) ; no need to do that for in-memory databases
   (sql/create-table :songs [:id "varchar(256)" "primary key"]
-                               [:data :varchar]))
+                               [:title :varchar]
+                               [:time :varchar]
+                               [:listeners :int]
+                               [:lames :int]
+                               [:hearts :int]
+                               [:awesomes :int]
+                               [:artist :varchar]))
 
 (defn uuid [] (str (java.util.UUID/randomUUID)))
 
